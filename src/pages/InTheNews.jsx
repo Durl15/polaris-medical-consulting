@@ -14,23 +14,7 @@ export default function InTheNews() {
   const fetchNews = async (query = 'occupational medicine') => {
     try {
       setLoading(true)
-      const apiKey = import.meta.env.VITE_NEWSAPI_KEY
-      
-      if (!apiKey) {
-        setError('News API key not configured. Please set VITE_NEWSAPI_KEY in your .env file.')
-        setLoading(false)
-        return
-      }
-
-      const response = await axios.get('https://newsapi.org/v2/everything', {
-        params: {
-          q: query,
-          sortBy: 'publishedAt',
-          language: 'en',
-          apiKey: apiKey
-        }
-      })
-
+      const response = await axios.post('/.netlify/functions/news', { query })
       setNews(response.data.articles || [])
       setError(null)
     } catch (err) {
