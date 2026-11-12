@@ -1,0 +1,4 @@
+# Polaris Medical Consulting: static site, no build step.
+[build]
+  command = "echo 'Static site - no build needed'"
+  publish = "site"
