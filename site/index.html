@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="/logo.png">
+<title>Polaris Medical Consulting</title>
+<meta name="description" content="Occupational medicine consulting, MRO services, and drug testing program design led by Dr. Sarah E. Johnson, UCSF-trained in Occupational and Environmental Medicine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<style>
+:root{
+  --paper:#F6F8FB; --surface:#FFFFFF; --mist:#E7EDF5; --line:#D5DEEA;
+  --ink:#122033; --ink-2:#44546A; --ink-3:#6A7A90;
+  --navy:#0C2D57; --blue:#2476C9; --blue-ink:#1B5FA6; --gold:#B8862A;
+  --on-navy:#F3F7FC; --on-navy-2:#B9CAE0;
+  --logo-chip:transparent;
+  --shadow:0 1px 2px rgba(12,45,87,.06),0 8px 24px rgba(12,45,87,.07);
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --gutter:clamp(16px,4vw,40px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#0A1628; --surface:#10213A; --mist:#152A47; --line:#223A5C;
+    --ink:#E8EFF8; --ink-2:#B3C2D6; --ink-3:#8699B2;
+    --navy:#081E3B; --blue:#6FB1F2; --blue-ink:#8CC2F5; --gold:#D9AE5A;
+    --on-navy:#F3F7FC; --on-navy-2:#A9BCD6;
+    --logo-chip:#F6F8FB;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#0A1628; --surface:#10213A; --mist:#152A47; --line:#223A5C;
+  --ink:#E8EFF8; --ink-2:#B3C2D6; --ink-3:#8699B2;
+  --navy:#081E3B; --blue:#6FB1F2; --blue-ink:#8CC2F5; --gold:#D9AE5A;
+  --on-navy:#F3F7FC; --on-navy-2:#A9BCD6;
+  --logo-chip:#F6F8FB;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--blue-ink)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--ink);text-wrap:balance;margin:0}
+h1{font-size:clamp(2.2rem,5.2vw,3.6rem);line-height:1.08;letter-spacing:-.015em}
+h2{font-size:clamp(1.75rem,3.4vw,2.5rem);line-height:1.15;letter-spacing:-.01em}
+h3{font-size:1.25rem;line-height:1.3}
+p{margin:0}
+.eyebrow{font:500 .75rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:9px;height:9px;background:var(--gold);clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+.lede{font-size:1.125rem;color:var(--ink-2);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .95rem/1 var(--sans);padding:14px 22px;border-radius:6px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-primary{background:var(--navy);color:var(--on-navy)}
+.btn-primary:hover{background:var(--blue-ink)}
+:root[data-theme="dark"] .btn-primary{background:var(--blue);color:#081E3B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn-primary{background:var(--blue);color:#081E3B}}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue-ink)}
+
+/* header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.brand{display:flex;align-items:center;background:var(--logo-chip);border-radius:6px;padding:4px 6px}
+.brand img{height:44px;width:auto}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{color:var(--ink-2);text-decoration:none;font-weight:500;font-size:.95rem}
+.nav-links a:hover{color:var(--ink)}
+.nav-links .btn{padding:11px 18px;color:var(--on-navy)}
+:root[data-theme="dark"] .nav-links .btn{color:#081E3B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nav-links .btn{color:#081E3B}}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:9px 11px;color:var(--ink);cursor:pointer}
+@media (max-width:820px){
+  .menu-btn{display:block}
+  .nav-links{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--surface);border-bottom:1px solid var(--line);padding:8px var(--gutter) 16px}
+  .nav-links[data-open="false"]{display:none}
+  .nav-links li a{display:block;padding:12px 0}
+  .nav-links .btn{justify-content:center;margin-top:8px}
+}
+
+/* hero */
+.hero{padding-block:clamp(48px,8vw,96px) clamp(40px,6vw,72px)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(32px,5vw,64px);align-items:center}
+.hero-copy{display:grid;gap:24px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.portrait{position:relative;margin:0}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:10px;box-shadow:var(--shadow)}
+.portrait figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:var(--surface);border-radius:8px;padding:14px 16px;box-shadow:var(--shadow);display:grid;gap:2px}
+.portrait strong{font-family:var(--serif);font-size:1.1rem;color:var(--ink)}
+.portrait span{font-size:.85rem;color:var(--ink-2)}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}.portrait{max-width:420px}}
+
+/* credentials strip */
+.creds{border-block:1px solid var(--line);background:var(--surface)}
+.creds dl{display:grid;grid-template-columns:repeat(4,1fr);margin:0}
+.creds div{padding:24px 20px;border-left:1px solid var(--line);display:grid;gap:6px;align-content:start}
+.creds div:first-child{border-left:0;padding-left:0}
+.creds dt{font:500 .7rem/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.creds dd{margin:0;font-family:var(--serif);font-size:1.15rem;line-height:1.3;color:var(--ink)}
+@media (max-width:820px){.creds dl{grid-template-columns:1fr 1fr}.creds div:nth-child(3){border-left:0;padding-left:0}.creds div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:460px){.creds dl{grid-template-columns:1fr}.creds div{border-left:0;padding-left:0}.creds div+div{border-top:1px solid var(--line)}}
+
+section{padding-block:clamp(56px,8vw,96px)}
+.section-head{display:grid;gap:16px;margin-bottom:40px;max-width:720px}
+
+/* services */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px;display:grid;grid-template-rows:auto auto 1fr auto;gap:12px}
+.service p{color:var(--ink-2);font-size:.975rem}
+.service ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:.925rem;display:grid;gap:4px;align-content:start}
+.cite{font:500 .72rem/1.4 var(--mono);color:var(--blue-ink);background:var(--mist);border-radius:4px;padding:6px 8px;justify-self:start;margin-top:8px}
+@media (max-width:980px){.services-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.services-grid{grid-template-columns:1fr}}
+
+/* approach */
+.approach{background:var(--navy);color:var(--on-navy)}
+.approach h2,.approach h3{color:var(--on-navy)}
+.approach .eyebrow{color:var(--on-navy-2)}
+.approach .lede{color:var(--on-navy-2)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
+.steps li{counter-increment:step;display:grid;gap:10px;align-content:start;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.steps li::before{content:"Step " counter(step);font:500 .72rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#E3BD6F}
+.steps p{color:var(--on-navy-2);font-size:.95rem}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* industries */
+.ind-head{display:grid;grid-template-columns:.8fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-bottom:40px}
+.ind-head .section-head{margin-bottom:0}
+.ind-photo{margin:0}
+.ind-photo img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:10px;box-shadow:var(--shadow)}
+@media (max-width:820px){.ind-head{grid-template-columns:1fr}.ind-photo{max-width:420px}}
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ind{border:1px solid var(--line);border-radius:8px;padding:20px;background:var(--surface);display:grid;gap:6px}
+.ind h3{font-size:1.05rem;font-family:var(--sans);font-weight:600}
+.ind p{font-size:.925rem;color:var(--ink-2)}
+@media (max-width:900px){.ind-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.ind-grid{grid-template-columns:1fr}}
+
+/* about */
+.about{background:var(--surface);border-block:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,72px)}
+.about-copy{display:grid;gap:18px;align-content:start}
+.about-copy p{color:var(--ink-2);max-width:62ch}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);display:grid;gap:22px}
+.timeline li{position:relative;padding-left:24px;display:grid;gap:3px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--blue)}
+.timeline li.now::before{background:var(--gold);border-color:var(--gold)}
+.timeline .when{font:500 .72rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.timeline strong{font-weight:600;color:var(--ink)}
+.timeline span.where{color:var(--ink-2);font-size:.93rem}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+.about-photo{margin:0;align-self:start;position:sticky;top:96px}
+.about-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:10px;box-shadow:var(--shadow)}
+@media (max-width:860px){.about-photo{position:static;max-width:420px}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,64px);align-items:start}
+.contact-info{display:grid;gap:22px}
+.contact-info dl{margin:0;display:grid;gap:18px}
+.contact-info dt{font:500 .72rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.contact-info dd{margin:0;color:var(--ink)}
+.email-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.copy-btn{font:500 .78rem/1 var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:4px;padding:6px 9px;cursor:pointer}
+.copy-btn:hover{border-color:var(--blue);color:var(--blue-ink)}
+form.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:1fr 1fr;gap:18px;box-shadow:var(--shadow)}
+.field{display:grid;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-weight:500;font-size:.9rem;color:var(--ink)}
+label .req{color:var(--blue-ink)}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:12px 13px;width:100%}
+textarea{min-height:140px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:0;border-color:transparent}
+.hp{position:absolute;left:-9999px}
+.form-foot{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.form-note{font-size:.85rem;color:var(--ink-3);max-width:40ch}
+.form-status{grid-column:1/-1;border-radius:6px;padding:14px 16px;background:var(--mist);color:var(--ink);font-weight:500}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:560px){form.card{grid-template-columns:1fr}}
+
+footer{background:var(--navy);color:var(--on-navy-2);padding-block:48px 32px;font-size:.92rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+footer h3{font-family:var(--sans);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-navy);margin-bottom:12px;font-weight:600}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{color:var(--on-navy-2);text-decoration:none}
+footer a:hover{color:var(--on-navy)}
+.foot-name{font-family:var(--serif);font-size:1.3rem;color:var(--on-navy);margin-bottom:8px}
+.foot-base{border-top:1px solid rgba(255,255,255,.14);margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem}
+@media (max-width:720px){.foot-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Polaris Medical Consulting, home"><img src="/logo.png" alt="Polaris Medical Consulting" width="183" height="44"></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links" data-open="false">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a class="btn btn-primary" href="#contact">Request a consultation</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Occupational medicine consulting</p>
+        <h1>Expert guidance that works for you.</h1>
+        <p class="lede">The landscape of occupational medicine is constantly changing with new rules and regulations which can be difficult to interpret and implement in the workplace. Whether you have a question about a complex medicolegal issue, need help managing your workplace drug screening program, or have a clinical need like post-offer exams, Polaris Medical Consulting has the expertise and experience necessary to help you navigate the many health issues that arise in the workplace. Request a consultation below to learn more about how Polaris Medical Consulting can meet your workplace health needs.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Request a consultation</a>
+          <a class="btn btn-ghost" href="#services">View services</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="/images/hero-doctor.jpg" alt="A physician reviewing results with a patient across a desk" width="880" height="1100">
+      </figure>
+    </div>
+  </div>
+
+  <div class="creds" aria-label="Credentials">
+    <div class="wrap">
+      <dl>
+        <div><dt>Residency</dt><dd>Occupational &amp; Environmental Medicine, UCSF</dd></div>
+        <div><dt>Medical Review Officer</dt><dd>MRO certified since 2015</dd></div>
+        <div><dt>Leadership</dt><dd>4 years as Associate Medical Director, WorkCare</dd></div>
+        <div><dt>Education</dt><dd>MD, University of Illinois at Chicago · MPH, UC Berkeley · BA, Johns Hopkins University</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>Clinical judgment and regulatory fluency, applied to your workplace.</h2>
+        <p class="lede">Engagements range from a single case review to ongoing medical direction for a multi-site program.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service">
+          <h3>Occupational Medicine Consulting</h3>
+          <p>Physician guidance on employee health questions that arise in everyday operations.</p>
+          <ul><li>Fitness-for-duty and return-to-work decisions</li><li>Work restrictions and accommodation guidance</li><li>Workplace health policy development and review</li></ul>
+          <span class="cite">Board-certified in Occupational and Environmental Medicine</span>
+        </article>
+        <article class="service">
+          <h3>Drug &amp; Alcohol Testing</h3>
+          <p>Medical Review Officer (MRO) services for both DOT-regulated and non-regulated testing programs.</p>
+          <ul><li>Donor interviews and medical record verification</li><li>Secure reporting of verified results</li><li>Safety-concern determinations</li><li>Drug and alcohol testing policy development</li><li>Supervisor and program manager guidance</li></ul>
+          <span class="cite">AAMRO-certified MRO since 2015</span>
+        </article>
+        <article class="service">
+          <h3>Medical Exams</h3>
+          <p>High-quality physical exam assessments based on job-specific criteria.</p>
+          <ul><li>Full complement of clinical services including post-offer, DOT/commercial driver, wellness, and injury management exams</li><li>Protocol review for existing exam vendors</li><li>Guidance on individualized assessments</li></ul>
+          <span class="cite">NRCME/DOT-Certified Examiner</span>
+        </article>
+        <article class="service">
+          <h3>Medical Surveillance</h3>
+          <p>Physician-led guidance and support to help you stay OSHA-compliant and protect the health of your unique workforce.</p>
+          <ul><li>Programs tailored to your workplace, including respirator use, silica, asbestos, lead, hearing conservation, HAZWOPER, bloodborne pathogens, and TB screening</li><li>Review of baseline, periodic, exit, and biological monitoring exam findings</li><li>Counseling on next steps for both the employee and employer in the event of an exposure</li><li>Medical surveillance program design and policy review</li></ul>
+          <span class="cite">MPH, UC Berkeley</span>
+        </article>
+        <article class="service">
+          <h3>Medicolegal Consulting</h3>
+          <p>Clear, well-documented medical opinions for employers and their counsel.</p>
+          <ul><li>Medical record review and summaries</li><li>Causation and work-relatedness opinions</li><li>Consultation on disputed cases</li><li>Medical necessity/appropriateness of treatment reviews</li></ul>
+          <span class="cite">UCSF-trained in Occupational &amp; Environmental Medicine</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How an engagement works</p>
+        <h2>From first call to a program that runs on its own.</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Consultation</h3><p>A conversation about the problem in front of you, the regulations that apply, and what a good outcome looks like.</p></li>
+        <li><h3>Assessment</h3><p>Review of current policies, vendors, and case history to find the gaps and the real risks.</p></li>
+        <li><h3>Implementation</h3><p>Written protocols, physician oversight, and training so your team knows what to do and why.</p></li>
+        <li><h3>Ongoing support</h3><p>A physician on call for the hard cases, plus updates as the rules change.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="industries">
+    <div class="wrap">
+      <div class="ind-head">
+        <figure class="ind-photo"><img src="/images/industries-shipyard.jpg" alt="A worker in protective coveralls and a hard hat at an industrial shipyard" width="1000" height="1000" loading="lazy"></figure>
+        <div class="section-head">
+          <p class="eyebrow">Industries</p>
+          <h2>Experience across very different workplaces.</h2>
+          <p class="lede">Every industry has its own hazards, regulators, and culture. Dr. Johnson has advised employers in each of these.</p>
+        </div>
+      </div>
+      <div class="ind-grid">
+        <div class="ind"><h3>Entertainment &amp; Media</h3><p>COVID-19 compliance for multiple TV and film studios, including productions with shifting casts and crews.</p></div>
+        <div class="ind"><h3>Energy &amp; Power</h3><p>Medical guidance for safety-sensitive roles in power generation and utilities.</p></div>
+        <div class="ind"><h3>Mining</h3><p>Occupational health support for physically demanding, high-exposure work environments.</p></div>
+        <div class="ind"><h3>Manufacturing</h3><p>Medical surveillance, fitness-for-duty, and return-to-work programs on the plant floor.</p></div>
+        <div class="ind"><h3>Transportation</h3><p>DOT drug and alcohol testing and MRO review for regulated employers.</p></div>
+        <div class="ind"><h3>Healthcare</h3><p>Employee health, exposure response, and screening programs for clinical organizations.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <p class="eyebrow">About Us</p>
+        <h2>A physician who has worked every side of the problem.</h2>
+        <p>Dr. Johnson is a board-certified Occupational and Environmental Medicine physician who brings a wealth of experience and a unique background to the field of workplace health. Her training began with obtaining her undergraduate degree at Johns Hopkins University followed by a three-year service commitment with Teach For America in Chicago Public Schools. After completing her teaching commitment in 2009, she attended the University of Illinois at Chicago where she obtained her medical degree.</p>
+        <p>Dr. Johnson went on to complete two years of general surgery residency where she learned to manage a wide range of patients from those needing simple outpatient procedures to those requiring complex care in the surgical intensive care unit. She then obtained certification as a Medical Review Officer (MRO) in 2015 and began working in the Occupational Medicine division for First Advantage, a national employment screening firm. Her work as an MRO exposed her to the world of occupational medicine and the many complex medical issues that can arise in the workplace. To further her training, Dr. Johnson moved to the Bay Area in 2018 and matriculated at the University of California at San Francisco where she completed her residency in Occupational and Environmental Medicine.</p>
+        <p>As her residency was concluding, the COVID-19 pandemic was just beginning. For her first job after residency, she worked as an Associate Medical Director for WorkCare where she managed COVID-19 compliance for several large clients including multiple TV and film studios. Her role of advising entertainment clients was a natural fit as Dr. Johnson has a long-standing interest in creative work and ran two film festivals while in college. During the pandemic, she developed skills in managing infectious diseases; implementing policies to ensure medicolegal compliance; and communicating with executives, employees, and government agencies alike. She also had the rare opportunity to learn about the unique challenges facing entertainment workplaces. In addition to working with entertainment clients, Dr. Johnson advised companies in a variety of other industries including power, mining, and manufacturing. She also continued her work as an MRO managing drug screening programs for a host of clients.</p>
+        <p>After spending four years at WorkCare, Dr. Johnson transitioned to her current role as founder and Chief Executive Officer of Polaris Medical Consulting, an occupational medicine firm where she utilizes her unique expertise to provide consulting and clinical services across multiple industries.</p>
+      </div>
+      <figure class="portrait about-photo"><img src="/images/dr-johnson.jpg" alt="Dr. Sarah Johnson, MD, MPH" width="560" height="784" loading="lazy"><figcaption><strong>Sarah Johnson, MD, MPH</strong><span>Founder &amp; CEO</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">Contact Us</p>
+        <h2>Tell us what you're working through.</h2>
+        <p class="lede">Share a little about your organization and the question at hand. We'll follow up to schedule a consultation.</p>
+      </div>
+      <form class="card" id="contact-form" name="contact" method="POST" action="/?sent=1#contact" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp"><label for="bot-field">Leave this field empty</label><input id="bot-field" name="bot-field" tabindex="-1" autocomplete="off"></p>
+        <div class="form-status full" id="form-status" role="status" hidden></div>
+        <div class="field"><label for="f-name">Name <span class="req">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Email <span class="req">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization"></div>
+        <div class="field full"><label for="f-industry">Industry</label>
+          <select id="f-industry" name="industry">
+            <option value="">Select an industry</option>
+            <option>Manufacturing &amp; Industrial</option><option>Construction</option><option>Mining &amp; Extraction</option><option>Transportation &amp; Logistics</option><option>Oil, Gas &amp; Energy</option><option>Utilities &amp; Power</option><option>Healthcare &amp; Hospitals</option><option>Telecommunications</option><option>Aerospace &amp; Defense</option><option>Entertainment &amp; Media (Film/TV)</option><option>Hospitality &amp; Food Service</option><option>Retail &amp; Distribution</option><option>Government &amp; Public Administration</option><option>Education &amp; Research</option><option>Financial Services</option><option>Real Estate &amp; Property Management</option><option>Automotive</option><option>Chemical &amp; Pharmaceutical</option><option>Agriculture &amp; Forestry</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field full"><label for="f-message">How can we help? <span class="req">*</span></label><textarea id="f-message" name="message" required></textarea></div>
+        <div class="form-foot">
+          <p class="form-note">Please don't include patient or employee medical information in this form.</p>
+          <button class="btn btn-primary" type="submit">Send message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><p class="foot-name">Polaris Medical Consulting</p><p>Occupational medicine expertise for workplaces across industries.</p></div>
+      <div><h3>Explore</h3><ul><li><a href="#services">Services</a></li><li><a href="#industries">Industries</a></li><li><a href="#about">About Us</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li>sjohnsonmd@polarismedicalconsulting.com</li><li>Consultations by appointment</li></ul></div>
+    </div>
+    <div class="foot-base"><span>© <span id="yr">2026</span> Polaris Medical Consulting. All rights reserved.</span><span>This site provides general information and is not medical advice.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menu-btn'), links=document.getElementById('nav-links');
+  btn.addEventListener('click',function(){var open=links.dataset.open==='true';links.dataset.open=String(!open);btn.setAttribute('aria-expanded',String(!open));});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.dataset.open='false';btn.setAttribute('aria-expanded','false');}});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var status=document.getElementById('form-status'), form=document.getElementById('contact-form');
+  if(/[?&]sent=1/.test(location.search)){status.textContent='Thank you. Your message was sent, and we will reply within 1–2 business days.';status.hidden=false;}
+  if(false){
+    form.addEventListener('submit',function(e){e.preventDefault();status.textContent='Preview only: on the live site this form delivers to the Polaris inbox.';status.hidden=false;});
+  }
+})();
+</script>
+
+</body>
+</html>
